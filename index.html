@@ -372,7 +372,20 @@ Please confirm my reservation. Thank you!`;
 
 <section>
   <h2>Our Restaurant / 餐厅照片</h2>
+<style>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
 
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+</style>
   <div class="gallery">
     <img src="images/IMG_4934.jpeg" alt="Southern Coastal">
     <img src="images/IMG_4935.jpeg" alt="Southern Coastal">
