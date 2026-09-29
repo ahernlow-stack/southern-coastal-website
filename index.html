@@ -390,12 +390,92 @@ Remarks / 备注: ${remarks}
 
 Please confirm my reservation. Thank you!`;
 
-  const whatsappURL =
-    "https://wa.me/601136043226?text=" +
-    encodeURIComponent(message);
+ const googleSheetURL =
+  "https://script.google.com/macros/s/AKfycbyKwPvaSTfCjsG7CZcMLRKog-VcR0mBNp-0MkhmARh66yCQWJQsOgYSdc1vyQY6f4Hrg/exec";
 
-  window.location.href = whatsappURL;
-}
+const formData = new FormData(form);
+
+const data = {
+  date: formData.get("date"),
+  time: formData.get("time"),
+  name: formData.get("name"),
+  phone: formData.get("phone"),
+  guests: formData.get("guests"),
+  remarks: formData.get("remarks")
+};
+
+fetch(googleSheetURL, {
+  method: "POST",
+  body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(result => {
+
+  if (result.success) {
+
+    const whatsappMessage =
+      message +
+      "\n\nReservation No.: " +
+      result.reservationNo;
+
+   const googleSheetURL =
+  "https://script.google.com/macros/s/AKfycbyKwPvaSTfCjsG7CZcMLRKog-VcR0mBNp-0MkhmARh66yCQWJQsOgYSdc1vyQY6f4Hrg/exec";
+
+const data = {
+  date: date,
+  time: time,
+  name: name,
+  phone: phone,
+  guests: guests,
+  remarks: remarks
+};
+
+fetch(googleSheetURL, {
+  method: "POST",
+  body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(result => {
+
+  if (result.success) {
+
+    const whatsappMessage =
+      message +
+      `\n\nReservation No. / 预约号码: ${result.reservationNo}`;
+
+    const whatsappURL =
+      "https://wa.me/601136043226?text=" +
+      encodeURIComponent(whatsappMessage);
+
+    window.location.href = whatsappURL;
+
+  } else {
+
+    alert("Sorry, this time slot is full. Please choose another time.");
+
+  }
+
+})
+.catch(error => {
+
+  console.error(error);
+  alert("Sorry, something went wrong. Please try again.");
+
+});
+
+  } else {
+
+    alert("Sorry, this time slot is full. Please choose another time.");
+
+  }
+
+})
+.catch(error => {
+
+  console.error(error);
+  alert("Sorry, something went wrong. Please try again.");
+
+});
 
 </script>
 
