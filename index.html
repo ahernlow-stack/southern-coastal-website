@@ -1,266 +1,420 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>Southern Coastal | Fresh Live Seafood</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Southern Coastal | Live Seafood</title>
-
-<style>
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  color: #222;
-}
-
-/* HEADER */
-
-header {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 25px 15px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 32px;
-}
-
-header p {
-  margin: 8px 0 0;
-}
-
-/* HERO */
-
-.hero {
-  width: 100%;
-  height: 420px;
-  background-image: url("images/IMG_4934.jpeg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: end;
-}
-
-.hero-box {
-  width: 100%;
-  padding: 35px 20px;
-  color: white;
-  background: linear-gradient(
-    transparent,
-    rgba(0,0,0,.8)
-  );
-}
-
-.hero-box h2 {
-  font-size: 32px;
-  margin: 0 0 8px;
-}
-
-.hero-box p {
-  margin: 0;
-}
-<!-- XIAOHONGSHU BUTTON -->
-
-<div style="text-align:center; padding:25px 20px;">
-
-  <button
-    type="button"
-    onclick="shareXiaohongshu()"
-    style="
-      width:auto;
-      padding:15px 28px;
-      background:#e60012;
-      color:white;
-      border:none;
-      border-radius:10px;
-      font-size:17px;
-      font-weight:bold;
-    "
+  <meta
+    name="description"
+    content="Southern Coastal Fresh Live Seafood Restaurant in Mount Austin, Johor Bahru."
   >
-    📕 随机文案 & 分享到小红书
-  </button>
 
-</div>
-/* RESERVATION BUTTON */
+  <style>
 
-.reserve-button {
-  text-align: center;
-  padding: 28px 20px;
-  background: white;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.reserve-button a {
-  display: inline-block;
-  background: #111;
-  color: white;
-  padding: 15px 35px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* SECTION */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #222;
+      line-height: 1.6;
+    }
 
-.section {
-  max-width: 900px;
-  margin: auto;
-  padding: 45px 20px;
-}
+    /* HEADER */
 
-.section h2 {
-  text-align: center;
-  margin-bottom: 25px;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+    }
 
-/* ABOUT */
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.about {
-  text-align: center;
-  line-height: 1.7;
-}
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+      color: #111;
+    }
 
-/* GALLERY */
+    .header-btn {
+      background: #111;
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
 
-.gallery {
-  display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  padding-bottom: 10px;
-}
+    /* HERO */
 
-.gallery img {
-  flex: 0 0 90%;
-  width: 90%;
-  height: 650px;
-  object-fit: cover;
-  border-radius: 12px;
-}
+    .hero {
+      position: relative;
+      height: 680px;
+      overflow: hidden;
+    }
 
-/* FORM */
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-form {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 3px 15px rgba(0,0,0,.08);
-}
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.42);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
 
-label {
-  display: block;
-  margin-top: 15px;
-  margin-bottom: 6px;
-  font-weight: bold;
-}
+    .hero-content {
+      color: white;
+      max-width: 700px;
+    }
 
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-}
+    .hero-content h1 {
+      font-size: 50px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
 
-textarea {
-  min-height: 100px;
-  resize: vertical;
-}
+    .hero-content p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
 
-button {
-  width: 100%;
-  margin-top: 25px;
-  padding: 15px;
-  background: #111;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .hero-button {
+      display: inline-block;
+      background: #e60012;
+      color: white;
+      text-decoration: none;
+      padding: 15px 28px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+    }
 
-button:disabled {
-  opacity: .6;
-}
+    /* GENERAL */
 
-.notice {
-  margin-top: 15px;
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-}
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px;
+    }
 
-/* INFORMATION */
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
 
-.info {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  line-height: 1.8;
-}
+    .section-text {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      color: #555;
+      font-size: 17px;
+    }
 
-/* TERMS */
+    /* GALLERY */
 
-.terms {
-  text-align: center;
-  font-size: 13px;
-  line-height: 1.7;
-  color: #666;
-  padding: 20px;
-  background: #f1f1f1;
-}
+    .gallery-wrapper {
+      overflow-x: auto;
+      overflow-y: hidden;
+      width: 100%;
+      scrollbar-width: thin;
+    }
 
-/* FOOTER */
+    .gallery {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+    }
 
-footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 25px 15px;
-}
+    .gallery img {
+      flex: 0 0 90%;
+      width: 90%;
+      height: 650px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
 
-footer p {
-  margin: 6px 0;
-}
+    /* XHS */
 
-/* MOBILE */
+    .xhs-section {
+      text-align: center;
+      padding: 25px 20px 50px;
+    }
 
-@media (max-width: 600px) {
+    .xhs-button {
+      width: auto;
+      padding: 15px 28px;
+      background: #e60012;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-  header h1 {
-    font-size: 26px;
-  }
+    .xhs-button:active {
+      transform: scale(0.98);
+    }
 
-  .hero {
-    height: 350px;
-  }
+    /* RESERVATION */
 
-  .hero-box h2 {
-    font-size: 26px;
-  }
+    .reservation-section {
+      background: #f7f7f7;
+      max-width: none;
+    }
 
-  .gallery img {
-    height: 550px;
-  }
+    .reservation-inner {
+      max-width: 700px;
+      margin: auto;
+    }
 
-}
+    .reservation-form {
+      margin-top: 30px;
+      display: grid;
+      gap: 16px;
+    }
 
-</style>
+    .form-group {
+      display: grid;
+      gap: 7px;
+    }
 
+    .form-group label {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 16px;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 9px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .form-note {
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+    }
+
+    /* INFO */
+
+    .info {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .info-box {
+      background: #f7f7f7;
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .info-box p {
+      margin-bottom: 10px;
+    }
+
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* TERMS */
+
+    .terms {
+      background: #fafafa;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .terms-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .terms p {
+      margin-bottom: 10px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    /* SUCCESS POPUP */
+
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 3000;
+      padding: 20px;
+    }
+
+    .popup.show {
+      display: flex;
+    }
+
+    .popup-box {
+      background: white;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .popup-box h3 {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .reservation-number {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .popup-button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .whatsapp-button {
+      background: #25D366;
+      color: white;
+    }
+
+    .close-button {
+      background: #111;
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      .header-inner {
+        padding: 12px 15px;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .header-btn {
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      .hero {
+        height: 600px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .hero-content p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 55px 18px;
+      }
+
+      .section-title {
+        font-size: 27px;
+      }
+
+      .gallery img {
+        height: 550px;
+        width: 90%;
+      }
+
+      .xhs-button {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
@@ -269,102 +423,140 @@ footer p {
 
 <header>
 
-  <h1>Southern Coastal</h1>
+  <div class="header-inner">
 
-  <p>
-    活海鲜加工 · Live Seafood Restaurant
-  </p>
+    <div class="logo">
+      Southern Coastal
+    </div>
+
+    <a
+      href="#reservation"
+      class="header-btn"
+    >
+      立即预约
+    </a>
+
+  </div>
 
 </header>
 
 
 <!-- HERO -->
 
-<section class="hero">
+<section
+  class="hero"
+  style="max-width:none; padding:0;"
+>
 
-  <div class="hero-box">
+  <img
+    src="images/IMG_4934.jpeg"
+    alt="Southern Coastal Fresh Seafood"
+  >
 
-    <h2>
-      Fresh Seafood, Coastal Taste
-    </h2>
+  <div class="hero-overlay">
 
-    <p>
-      新鲜活海鲜 · 简单预约 · 方便用餐
-    </p>
+    <div class="hero-content">
+
+      <h1>Southern Coastal</h1>
+
+      <p>
+        Fresh Live Seafood · 活海鲜
+      </p>
+
+      <a
+        href="#reservation"
+        class="hero-button"
+      >
+        Make Reservation / 立即预约
+      </a>
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- MAKE RESERVATION -->
+<!-- ABOUT US -->
 
-<div class="reserve-button">
+<section id="about">
 
-  <a href="#reservation">
-    Make Reservation / 立即预约
-  </a>
-
-</div>
-
-
-<!-- ABOUT -->
-
-<section class="section">
-
-  <h2>
+  <h2 class="section-title">
     About Us / 关于我们
   </h2>
 
-  <div class="about">
+  <p class="section-text">
 
-    <p>
-      Welcome to Southern Coastal.<br>
-      We specialise in fresh live seafood
-      and seafood processing.
-    </p>
+    Southern Coastal is a fresh live seafood restaurant
+    located in Mount Austin, Johor Bahru.
 
-    <p>
-      欢迎来到 Southern Coastal。<br>
-      我们专注于新鲜活海鲜以及海鲜加工。
-    </p>
+    <br><br>
+
+    We focus on fresh seafood and a comfortable dining
+    experience for families and friends.
+
+    <br><br>
+
+    Southern Coastal 是一家位于新山 Mount Austin 的活海鲜餐厅。
+
+    我们专注于新鲜海鲜，
+    适合家庭聚餐、朋友聚餐以及日常用餐。
+
+  </p>
+
+</section>
+
+
+<!-- PHOTO GALLERY -->
+
+<section id="gallery">
+
+  <h2 class="section-title">
+    Gallery / 餐厅照片
+  </h2>
+
+  <div class="gallery-wrapper">
+
+    <div class="gallery">
+
+      <img
+        src="images/IMG_4936.jpeg"
+        alt="Southern Coastal"
+      >
+
+      <img
+        src="images/IMG_4937.jpeg"
+        alt="Southern Coastal"
+      >
+
+      <img
+        src="images/IMG_4938.jpeg"
+        alt="Southern Coastal"
+      >
+
+      <img
+        src="images/IMG_4935.jpeg"
+        alt="Southern Coastal"
+      >
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- GALLERY -->
+<!-- XIAOHONGSHU -->
 
-<section class="section">
+<section class="xhs-section">
 
-  <h2>
-    Our Restaurant / 餐厅环境
-  </h2>
-
-  <div class="gallery">
-
-    <img
-      src="images/IMG_4936.jpeg"
-      alt="Southern Coastal"
-    >
-
-    <img
-      src="images/IMG_4937.jpeg"
-      alt="Southern Coastal"
-    >
-
-    <img
-      src="images/IMG_4938.jpeg"
-      alt="Southern Coastal"
-    >
-
-     <img
-      src="images/IMG_4935.jpeg"
-      alt="Southern Coastal"
-    >
-
-  </div>
+  <button
+    type="button"
+    class="xhs-button"
+    onclick="shareXiaohongshu()"
+  >
+    📕 随机文案 & 分享到小红书
+  </button>
 
 </section>
 
@@ -372,207 +564,258 @@ footer p {
 <!-- RESERVATION -->
 
 <section
-  class="section"
   id="reservation"
+  class="reservation-section"
 >
 
-  <h2>
-    Reservation / 在线预约
-  </h2>
+  <div class="reservation-inner">
 
-  <form id="reservationForm">
+    <h2 class="section-title">
+      Reservation / 立即预约
+    </h2>
 
-    <label>
-      Name / 姓名
-    </label>
+    <p class="section-text">
 
-    <input
-      type="text"
-      id="name"
-      required
-      placeholder="Your name / 您的姓名"
-    >
-
-
-    <label>
-      Phone / 电话
-    </label>
-
-    <input
-      type="tel"
-      id="phone"
-      required
-      placeholder="0123456789"
-    >
-
-
-    <label>
-      Date / 日期
-    </label>
-
-    <input
-      type="date"
-      id="date"
-      required
-    >
-
-
-    <label>
-      Time / 时间
-    </label>
-
-    <select
-      id="time"
-      required
-    >
-
-      <option value="">
-        Select Time / 选择时间
-      </option>
-
-      <option value="13:00">1:00 PM</option>
-      <option value="13:30">1:30 PM</option>
-      <option value="14:00">2:00 PM</option>
-      <option value="14:30">2:30 PM</option>
-      <option value="15:00">3:00 PM</option>
-      <option value="15:30">3:30 PM</option>
-      <option value="16:00">4:00 PM</option>
-      <option value="16:30">4:30 PM</option>
-      <option value="17:00">5:00 PM</option>
-      <option value="17:30">5:30 PM</option>
-      <option value="18:00">6:00 PM</option>
-      <option value="18:30">6:30 PM</option>
-      <option value="19:00">7:00 PM</option>
-      <option value="19:30">7:30 PM</option>
-      <option value="20:00">8:00 PM</option>
-      <option value="20:30">8:30 PM</option>
-      <option value="21:00">9:00 PM</option>
-      <option value="21:30">9:30 PM</option>
-      <option value="22:00">10:00 PM</option>
-
-    </select>
-
-
-    <label>
-      Guests / 人数
-    </label>
-
-    <select
-      id="guests"
-      required
-    >
-
-      <option value="">
-        Select Guests / 选择人数
-      </option>
-
-      <option value="1">1 Person / 1位</option>
-      <option value="2">2 People / 2位</option>
-      <option value="3">3 People / 3位</option>
-      <option value="4">4 People / 4位</option>
-      <option value="5">5 People / 5位</option>
-      <option value="6">6 People / 6位</option>
-      <option value="7">7 People / 7位</option>
-      <option value="8">8 People / 8位</option>
-      <option value="9">9 People / 9位</option>
-      <option value="10">10 People / 10位</option>
-
-    </select>
-
-
-    <label>
-      Remarks / 备注
-    </label>
-
-    <textarea
-      id="remarks"
-      placeholder="Special request / 特别要求"
-    ></textarea>
-
-
-    <button
-      type="submit"
-      id="submitButton"
-    >
-      Confirm Reservation / 确认预约
-    </button>
-
-
-    <div class="notice">
-
-      After submitting,
-      WhatsApp will open automatically.
+      Please fill in your reservation details below.
 
       <br>
 
-      提交后会自动打开 WhatsApp。
+      请填写以下预约资料。
 
-    </div>
+    </p>
 
-  </form>
+
+    <form
+      id="reservationForm"
+      class="reservation-form"
+    >
+
+      <!-- DATE -->
+
+      <div class="form-group">
+
+        <label for="date">
+          Date / 日期
+        </label>
+
+        <input
+          type="date"
+          id="date"
+          required
+        >
+
+      </div>
+
+
+      <!-- TIME -->
+
+      <div class="form-group">
+
+        <label for="time">
+          Time / 时间
+        </label>
+
+        <select
+          id="time"
+          required
+        >
+
+          <option value="">
+            Select Time / 选择时间
+          </option>
+
+          <option value="1:00 PM">1:00 PM</option>
+          <option value="1:30 PM">1:30 PM</option>
+
+          <option value="2:00 PM">2:00 PM</option>
+          <option value="2:30 PM">2:30 PM</option>
+
+          <option value="3:00 PM">3:00 PM</option>
+          <option value="3:30 PM">3:30 PM</option>
+
+          <option value="4:00 PM">4:00 PM</option>
+          <option value="4:30 PM">4:30 PM</option>
+
+          <option value="5:00 PM">5:00 PM</option>
+          <option value="5:30 PM">5:30 PM</option>
+
+          <option value="6:00 PM">6:00 PM</option>
+          <option value="6:30 PM">6:30 PM</option>
+
+          <option value="7:00 PM">7:00 PM</option>
+          <option value="7:30 PM">7:30 PM</option>
+
+          <option value="8:00 PM">8:00 PM</option>
+          <option value="8:30 PM">8:30 PM</option>
+
+          <option value="9:00 PM">9:00 PM</option>
+          <option value="9:30 PM">9:30 PM</option>
+
+          <option value="10:00 PM">10:00 PM</option>
+
+        </select>
+
+      </div>
+
+
+      <!-- NAME -->
+
+      <div class="form-group">
+
+        <label for="name">
+          Name / 姓名
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Your Name / 您的姓名"
+          required
+        >
+
+      </div>
+
+
+      <!-- PHONE -->
+
+      <div class="form-group">
+
+        <label for="phone">
+          Phone / 电话
+        </label>
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Your Phone Number / 电话号码"
+          required
+        >
+
+      </div>
+
+
+      <!-- GUESTS -->
+
+      <div class="form-group">
+
+        <label for="guests">
+          Guests / 人数
+        </label>
+
+        <select
+          id="guests"
+          required
+        >
+
+          <option value="">
+            Select Guests / 选择人数
+          </option>
+
+          <option value="1">1 Person / 1位</option>
+          <option value="2">2 People / 2位</option>
+          <option value="3">3 People / 3位</option>
+          <option value="4">4 People / 4位</option>
+          <option value="5">5 People / 5位</option>
+          <option value="6">6 People / 6位</option>
+          <option value="7">7 People / 7位</option>
+          <option value="8">8 People / 8位</option>
+          <option value="9">9 People / 9位</option>
+          <option value="10">10 People / 10位</option>
+          
+        </select>
+
+      </div>
+
+
+      <!-- REMARKS -->
+
+      <div class="form-group">
+
+        <label for="remarks">
+          Remarks / 备注
+        </label>
+
+        <textarea
+          id="remarks"
+          placeholder="Special requests / 特别要求"
+        ></textarea>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="submit-button"
+        id="submitButton"
+      >
+        Confirm Reservation / 确认预约
+      </button>
+
+
+      <p class="form-note">
+        After submitting, your reservation number will be generated.
+        <br>
+        提交后系统会生成您的预约号码。
+      </p>
+
+    </form>
+
+  </div>
 
 </section>
 
 
-<!-- RESTAURANT INFORMATION -->
+<!-- INFORMATION -->
 
-<section class="section">
-
-  <h2>
-    Information / 餐厅资料
-  </h2>
+<section>
 
   <div class="info">
 
-    <p>
+    <h2 class="section-title">
+      Restaurant Information / 餐厅资料
+    </h2>
 
-      📍 <strong>
-        Address / 地址
-      </strong>
+    <div class="info-box">
 
-      <br>
+      <p>
+        📍
+        <strong>Address / 地址</strong>
+      </p>
 
-      30, Jalan Mutiara Emas 5/22,
-
-      <br>
-
-      Taman Mount Austin,
-
-      <br>
-
-      81100 Johor Bahru,
-
-      <br>
-
-      Johor Darul Ta'zim
-
-    </p>
-
-
-    <p>
-
-      📞 <strong>
-        Phone / 电话
-      </strong>
+      <p>
+        30, Jalan Mutiara Emas 5/22,
+        Taman Mount Austin,
+        81100 Johor Bahru,
+        Johor Darul Ta'zim
+      </p>
 
       <br>
 
-      011-36043226
+      <p>
+        📞
+        <strong>Phone / 电话</strong>
+      </p>
 
-    </p>
-
-
-    <p>
-
-      🕐 <strong>
-        Opening / 营业时间
-      </strong>
+      <p>
+        011-360 43226
+      </p>
 
       <br>
 
-      Monday – Sunday
+      <p>
+        🕐
+        <strong>Opening Hours / 营业时间</strong>
+      </p>
 
-    </p>
+      <p>
+        Monday – Sunday / 星期一至星期日
+      </p>
+
+      <p>
+        1:00 PM – 10:00 PM
+      </p>
+
+    </div>
 
   </div>
 
@@ -581,16 +824,26 @@ footer p {
 
 <!-- TERMS -->
 
-<div class="terms">
+<section class="terms">
 
-  All reservation arrangements and final interpretation
-  shall be subject to the decision of Southern Coastal.
+  <div class="terms-inner">
 
-  <br>
+    <h2 class="section-title">
+      Terms / 条款
+    </h2>
 
-  所有预约安排及最终解释权均归 Southern Coastal 所有。
+    <p>
+      All reservation arrangements and final interpretation
+      shall be subject to the decision of Southern Coastal.
+    </p>
 
-</div>
+    <p>
+      所有预约安排及最终解释权均归 Southern Coastal 所有。
+    </p>
+
+  </div>
+
+</section>
 
 
 <!-- FOOTER -->
@@ -598,63 +851,83 @@ footer p {
 <footer>
 
   <p>
-    Southern Coastal
-  </p>
-
-  <p>
-    Live Seafood · 活海鲜加工
-  </p>
-
-  <p>
-    011-36043226
+    © 2026 Southern Coastal.
+    All Rights Reserved.
   </p>
 
 </footer>
 
-function shareXiaohongshu() {
 
-  // 随机选择一篇文案
-  const randomIndex =
-    Math.floor(
-      Math.random() * xhsCaptions.length
-    );
+<!-- SUCCESS POPUP -->
 
-  const caption =
-    xhsCaptions[randomIndex];
+<div
+  id="successPopup"
+  class="popup"
+>
+
+  <div class="popup-box">
+
+    <h3>
+      Reservation Submitted
+    </h3>
+
+    <p>
+      预约已提交
+    </p>
+
+    <div
+      id="popupReservationNo"
+      class="reservation-number"
+    >
+    </div>
+
+    <p>
+      Please keep your reservation number.
+      <br>
+      请保存您的预约号码。
+    </p>
+
+    <button
+      id="whatsappButton"
+      class="popup-button whatsapp-button"
+    >
+      WhatsApp Reservation / WhatsApp预约
+    </button>
+
+    <button
+      class="popup-button close-button"
+      onclick="closePopup()"
+    >
+      Close / 关闭
+    </button>
+
+  </div>
+
+</div>
 
 
-  // 自动复制文案
-  navigator.clipboard.writeText(caption)
-    .then(function() {
-
-      // 尝试打开小红书 App
-      window.location.href =
-        "xhsdiscover://";
-
-
-      // 如果没有打开 App，
-      // 1.5 秒后打开小红书网页版
-      setTimeout(function() {
-
-        window.open(
-          "https://www.xiaohongshu.com/",
-          "_blank"
-        );
-
-      }, 1500);
-
-    })
-    .catch(function() {
-
-      alert(
-        "文案复制失败，请重新点击按钮。"
-      );
-
-    });
-
-}
-  
 <script>
+
+
+/* =========================
+   GOOGLE APPS SCRIPT
+========================= */
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbxeN-GmdWUCk2GNy2hw7KIxj6QBZRe0qVWUN_LNP1RWBmREb42u0NpgDz31JZB7Wn4Z2Q/exec";
+
+
+/* =========================
+   RESTAURANT WHATSAPP
+========================= */
+
+const RESTAURANT_WHATSAPP =
+"601136043226";
+
+
+/* =========================
+   XIAOHONGSHU CAPTIONS
+========================= */
 
 const xhsCaptions = [
 
@@ -804,144 +1077,308 @@ Live Seafood · Johor Bahru
 
 #JBFoodie #JohorBahruFood #Seafood #新山美食`
 
-]; 
-/* GOOGLE SHEET */
-
-const googleSheetURL =
-"https://script.google.com/macros/s/AKfycbxeN-GmdWUCk2GNy2hw7KIxj6QBZRe0qVWUN_LNP1RWBmREb42u0NpgDz31JZB7Wn4Z2Q/exec";
+];
 
 
-/* RESERVATION FORM */
+/* =========================
+   DATE
+========================= */
+
+const dateInput =
+document.getElementById("date");
+
+const today =
+new Date().toISOString().split("T")[0];
+
+dateInput.min = today;
+
+
+/* =========================
+   RESERVATION NUMBER
+========================= */
+
+function generateReservationNo() {
+
+  const random =
+    Math.random()
+      .toString(36)
+      .substring(2, 8)
+      .toUpperCase();
+
+  return "SC-" + random;
+
+}
+
+
+/* =========================
+   WHATSAPP MESSAGE
+========================= */
+
+function createWhatsAppMessage(data) {
+
+  return `
+Southern Coastal Reservation / 预约
+
+Reservation No.:
+${data.reservationNo}
+
+Date / 日期:
+${data.date}
+
+Time / 时间:
+${data.time}
+
+Name / 姓名:
+${data.name}
+
+Phone / 电话:
+${data.phone}
+
+Guests / 人数:
+${data.guests}
+
+Remarks / 备注:
+${data.remarks || "-"}
+
+Terms / 条款:
+All reservation arrangements and final interpretation shall be subject to the decision of Southern Coastal.
+
+所有预约安排及最终解释权均归 Southern Coastal 所有。
+  `.trim();
+
+}
+
+
+/* =========================
+   FORM SUBMIT
+========================= */
 
 document
-  .getElementById("reservationForm")
-  .addEventListener("submit", function(event) {
+.getElementById("reservationForm")
+.addEventListener("submit", function(event) {
 
-    event.preventDefault();
-
-    const button =
-      document.getElementById("submitButton");
-
-    button.disabled = true;
-
-    button.innerText =
-      "Processing... / 处理中...";
+  event.preventDefault();
 
 
-    const name =
-      document.getElementById("name").value.trim();
-
-    const phone =
-      document.getElementById("phone").value.trim();
-
-    const date =
-      document.getElementById("date").value;
-
-    const time =
-      document.getElementById("time").value;
-
-    const guests =
-      document.getElementById("guests").value;
-
-    const remarks =
-      document.getElementById("remarks").value.trim();
+  const submitButton =
+    document.getElementById("submitButton");
 
 
-    /* RESERVATION NUMBER */
+  submitButton.disabled = true;
 
-    const randomNumber =
-      Math.random()
-        .toString(36)
-        .substring(2, 8)
-        .toUpperCase();
-
-    const reservationNo =
-      "SC-" + randomNumber;
+  submitButton.innerText =
+    "Submitting... / 提交中...";
 
 
-    /* DATA */
+  const data = {
 
-    const data = {
+    date:
+      document.getElementById("date").value,
 
-      date: date,
-      time: time,
-      name: name,
-      phone: phone,
-      guests: guests,
-      remarks: remarks,
-      reservationNo: reservationNo
+    time:
+      document.getElementById("time").value,
+
+    name:
+      document.getElementById("name").value.trim(),
+
+    phone:
+      document.getElementById("phone").value.trim(),
+
+    guests:
+      document.getElementById("guests").value,
+
+    remarks:
+      document.getElementById("remarks").value.trim(),
+
+    reservationNo:
+      generateReservationNo()
+
+  };
+
+
+  /*
+     Send to Google Sheet.
+
+     text/plain avoids browser preflight
+     and works with Google Apps Script.
+  */
+
+  fetch(
+    GOOGLE_SCRIPT_URL,
+    {
+
+      method: "POST",
+
+      mode: "no-cors",
+
+      headers: {
+        "Content-Type":
+          "text/plain;charset=utf-8"
+      },
+
+      body:
+        JSON.stringify(data)
+
+    }
+  )
+  .catch(function(error) {
+
+    console.log(
+      "Google Sheet error:",
+      error
+    );
+
+  });
+
+
+  /*
+     Show reservation result.
+  */
+
+  document
+    .getElementById("popupReservationNo")
+    .innerText =
+      data.reservationNo;
+
+
+  const whatsappMessage =
+    createWhatsAppMessage(data);
+
+
+  const whatsappURL =
+    "https://wa.me/" +
+    RESTAURANT_WHATSAPP +
+    "?text=" +
+    encodeURIComponent(
+      whatsappMessage
+    );
+
+
+  document
+    .getElementById("whatsappButton")
+    .onclick = function() {
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
 
     };
 
 
-    /* SEND TO GOOGLE SHEET */
-
-    fetch(
-      googleSheetURL,
-      {
-
-        method: "POST",
-
-        mode: "no-cors",
-
-        headers: {
-          "Content-Type":
-            "text/plain;charset=utf-8"
-        },
-
-        body: JSON.stringify(data)
-
-      }
-    )
-    .catch(function(error) {
-
-      console.log(error);
-
-    });
+  document
+    .getElementById("successPopup")
+    .classList.add("show");
 
 
-    /* WHATSAPP MESSAGE */
+  submitButton.disabled = false;
 
-    const whatsappMessage =
-
-`Hello Southern Coastal,
-
-I would like to make a reservation.
-
-Name / 姓名: ${name}
-Phone / 电话: ${phone}
-Date / 日期: ${date}
-Time / 时间: ${time}
-Guests / 人数: ${guests}
-Remarks / 备注: ${remarks}
-
-Reservation No. / 预约号码: ${reservationNo}
-
-All reservation arrangements and final interpretation shall be subject to the decision of Southern Coastal.
-
-所有预约安排及最终解释权均归 Southern Coastal 所有。
-
-Please confirm my reservation. Thank you!`;
+  submitButton.innerText =
+    "Confirm Reservation / 确认预约";
 
 
-    /* WHATSAPP */
+  document
+    .getElementById("reservationForm")
+    .reset();
 
-    const whatsappURL =
-      "https://wa.me/601136043226?text=" +
-      encodeURIComponent(whatsappMessage);
+});
 
 
-    setTimeout(function() {
+/* =========================
+   CLOSE POPUP
+========================= */
 
-      window.location.href = whatsappURL;
+function closePopup() {
 
-    }, 800);
+  document
+    .getElementById("successPopup")
+    .classList.remove("show");
 
-  });
+}
+
+
+/* =========================
+   XIAOHONGSHU
+========================= */
+
+async function shareXiaohongshu() {
+
+  const randomIndex =
+    Math.floor(
+      Math.random() *
+      xhsCaptions.length
+    );
+
+  const caption =
+    xhsCaptions[randomIndex];
+
+
+  try {
+
+    await navigator.clipboard.writeText(
+      caption
+    );
+
+  } catch (error) {
+
+    /*
+      Fallback for clipboard
+    */
+
+    const textarea =
+      document.createElement("textarea");
+
+    textarea.value =
+      caption;
+
+    textarea.style.position =
+      "fixed";
+
+    textarea.style.left =
+      "-9999px";
+
+    document.body.appendChild(
+      textarea
+    );
+
+    textarea.select();
+
+    document.execCommand(
+      "copy"
+    );
+
+    textarea.remove();
+
+  }
+
+
+  /*
+     Open Xiaohongshu publish page.
+
+     Official Xiaohongshu Deeplink:
+     xhsdiscover://post
+  */
+
+  window.location.href =
+    "xhsdiscover://post";
+
+
+  /*
+     If the app does not open,
+     show a simple instruction.
+  */
+
+  setTimeout(function() {
+
+    alert(
+      "文案已经复制好了！\n\n如果小红书没有自动打开，请手动打开小红书，然后进入发布页面粘贴即可。"
+    );
+
+  }, 1800);
+
+}
 
 </script>
 
 </body>
-
 </html>
-```
