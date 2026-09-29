@@ -71,7 +71,28 @@ header p {
 .hero-box p {
   margin: 0;
 }
+<!-- XIAOHONGSHU BUTTON -->
 
+<div style="text-align:center; padding:25px 20px;">
+
+  <button
+    type="button"
+    onclick="shareXiaohongshu()"
+    style="
+      width:auto;
+      padding:15px 28px;
+      background:#e60012;
+      color:white;
+      border:none;
+      border-radius:10px;
+      font-size:17px;
+      font-weight:bold;
+    "
+  >
+    📕 随机文案 & 分享到小红书
+  </button>
+
+</div>
 /* RESERVATION BUTTON */
 
 .reserve-button {
@@ -590,9 +611,200 @@ footer p {
 
 </footer>
 
+function shareXiaohongshu() {
 
+  // 随机选择一篇文案
+  const randomIndex =
+    Math.floor(
+      Math.random() * xhsCaptions.length
+    );
+
+  const caption =
+    xhsCaptions[randomIndex];
+
+
+  // 自动复制文案
+  navigator.clipboard.writeText(caption)
+    .then(function() {
+
+      // 尝试打开小红书 App
+      window.location.href =
+        "xhsdiscover://";
+
+
+      // 如果没有打开 App，
+      // 1.5 秒后打开小红书网页版
+      setTimeout(function() {
+
+        window.open(
+          "https://www.xiaohongshu.com/",
+          "_blank"
+        );
+
+      }, 1500);
+
+    })
+    .catch(function() {
+
+      alert(
+        "文案复制失败，请重新点击按钮。"
+      );
+
+    });
+
+}
+  
 <script>
 
+const xhsCaptions = [
+
+`📍 Johor Bahru 美食推荐！
+今天来到 Southern Coastal 吃一顿新鲜活海鲜 🦀🦐
+海鲜新鲜，吃起来真的很满足！
+
+#新山美食 #JohorBahruFood #新山海鲜 #活海鲜 #JB美食`,
+
+`最近在 Johor Bahru 找到一家不错的海鲜店 🦐
+Southern Coastal 新鲜海鲜，朋友聚餐、家庭聚餐都很适合！
+
+📍 Mount Austin, Johor Bahru
+
+#新山美食 #JBFood #MountAustin #新山海鲜`,
+
+`周末不知道吃什么？
+那就吃海鲜吧！🌊🦀
+Southern Coastal 新鲜活海鲜，简单吃一顿舒服的晚餐。
+
+📍 Johor Bahru
+
+#周末美食 #新山美食 #JBFood #活海鲜`,
+
+`海鲜控应该会喜欢这里 🦐🦀
+来到 Southern Coastal，就是想吃一顿新鲜的海鲜！
+
+#海鲜控 #新山美食 #JB美食 #活海鲜`,
+
+`今天的晚餐 🦀🌊
+在 Southern Coastal 吃新鲜海鲜，简单、舒服、满足。
+
+📍 Mount Austin, Johor Bahru
+
+#新山美食推荐 #JBFood #新山海鲜 #MountAustin`,
+
+`Johor Bahru 海鲜推荐 📍
+喜欢吃海鲜的朋友可以收藏这一家！
+Southern Coastal Fresh Seafood 🦐
+
+#JohorBahruFood #JBFoodie #新山美食 #活海鲜`,
+
+`今晚吃什么？
+当然是海鲜啦 🦀🦐
+Southern Coastal 新鲜海鲜，适合一家人一起吃。
+
+📍 Mount Austin
+
+#家庭聚餐 #新山美食 #新山海鲜 #JBFood`,
+
+`发现一家 Johor Bahru 的海鲜餐厅 🌊
+Southern Coastal 主打新鲜活海鲜，
+喜欢海鲜的朋友可以来看看！
+
+📍 Taman Mount Austin
+
+#JB美食 #新山美食 #活海鲜 #JohorBahruFood`,
+
+`和朋友约饭不知道去哪里？
+可以试试 Southern Coastal 🦐
+新鲜海鲜、轻松的用餐体验！
+
+#朋友聚餐 #新山美食 #JBFood #海鲜`,
+
+`海鲜就是要新鲜 🦀
+今天来到 Southern Coastal，吃一顿新鲜的活海鲜！
+
+Johor Bahru 的朋友可以收藏起来 📍
+
+#海鲜 #活海鲜 #新山美食 #JBFoodie`,
+
+`A seafood night in Johor Bahru 🌊🦐
+Fresh seafood, good food and good company.
+
+Southern Coastal, Mount Austin.
+
+#JohorBahruFood #JBFood #Seafood #LiveSeafood`,
+
+`Weekend seafood time 🦀🦐
+Nothing better than having fresh seafood with family and friends.
+
+📍 Southern Coastal, Johor Bahru
+
+#JBFood #JohorBahruFood #SeafoodLover`,
+
+`新山的海鲜控在哪里？🦐
+Southern Coastal Fresh Live Seafood
+下次不知道吃什么，可以把这一家放进你的 list！
+
+#新山美食 #海鲜控 #活海鲜 #JBFood`,
+
+`今天不想吃普通的晚餐，
+那就来一顿海鲜吧 🌊
+
+Southern Coastal
+Johor Bahru 📍
+
+#新山美食 #JBFoodie #海鲜 #JohorBahruFood`,
+
+`Mount Austin 附近吃什么？
+可以试试 Southern Coastal 🦀
+新鲜海鲜，适合朋友聚餐和家庭聚餐。
+
+#MountAustin #JBFood #新山美食 #新山海鲜`,
+
+`Seafood lovers, this one is for you 🦐🦀
+Fresh live seafood in Johor Bahru.
+
+Southern Coastal
+📍 Mount Austin
+
+#SeafoodLover #JBFood #JohorBahruFood`,
+
+`一顿好的海鲜，
+最重要的就是新鲜 🦐
+
+Southern Coastal
+把新鲜活海鲜带到你的餐桌。
+
+📍 Johor Bahru
+
+#新山海鲜 #活海鲜 #新山美食 #JBFoodie`,
+
+`今天和家人一起吃海鲜 ❤️
+Southern Coastal
+新鲜海鲜 + 家人朋友，
+就是简单的幸福。
+
+📍 Mount Austin, Johor Bahru
+
+#家庭聚餐 #新山美食 #海鲜 #JBFood`,
+
+`收藏一个 Johor Bahru 海鲜地点 📍
+Southern Coastal 🦀🦐
+
+喜欢海鲜的朋友，下次可以来试试看！
+
+#JohorBahru #JBFood #新山美食 #海鲜推荐`,
+
+`Foodie 必收藏 🦐🌊
+Southern Coastal
+Live Seafood · Johor Bahru
+
+适合周末和朋友一起吃海鲜！
+
+📍 Mount Austin
+
+#JBFoodie #JohorBahruFood #Seafood #新山美食`
+
+]; 
 /* GOOGLE SHEET */
 
 const googleSheetURL =
