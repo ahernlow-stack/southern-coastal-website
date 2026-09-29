@@ -1,291 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
 <title>Southern Coastal | Live Seafood</title>
 
+
 <style>
+
 * {
   box-sizing: border-box;
 }
 
+
 body {
+
   margin: 0;
+
   font-family: Arial, sans-serif;
+
   background: #f7f7f7;
+
   color: #222;
+
 }
+
+
+/* =========================
+   HEADER
+========================= */
 
 header {
+
   background: #111;
+
   color: white;
+
   text-align: center;
+
   padding: 25px 15px;
+
 }
+
 
 header h1 {
+
   margin: 0;
+
   font-size: 32px;
+
 }
+
 
 header p {
+
   margin: 8px 0 0;
+
 }
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
+
   width: 100%;
+
   height: 420px;
-  background-image: url("images/IMG_4934.jpeg");
+
+  background-image:
+    url("images/IMG_4934.jpeg");
+
   background-size: cover;
+
   background-position: center;
+
   display: flex;
+
   align-items: end;
+
 }
+
 
 .hero-box {
+
   width: 100%;
+
   padding: 35px 20px;
+
   color: white;
-  background: linear-gradient(transparent, rgba(0,0,0,.8));
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,.8)
+    );
+
 }
+
 
 .hero-box h2 {
+
   font-size: 32px;
+
   margin: 0 0 8px;
+
 }
+
+
+.hero-box p {
+
+  margin: 0;
+
+}
+
+
+/* =========================
+   MAKE RESERVATION BUTTON
+========================= */
+
+.reserve-button {
+
+  text-align: center;
+
+  padding: 28px 20px;
+
+  background: white;
+
+}
+
+
+.reserve-button a {
+
+  display: inline-block;
+
+  background: #111;
+
+  color: white;
+
+  padding: 15px 35px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+}
+
+
+/* =========================
+   SECTION
+========================= */
 
 .section {
+
   max-width: 900px;
+
   margin: auto;
+
   padding: 45px 20px;
+
 }
+
 
 .section h2 {
+
   text-align: center;
+
   margin-bottom: 25px;
+
 }
+
+
+/* =========================
+   ABOUT
+========================= */
 
 .about {
+
   text-align: center;
+
   line-height: 1.7;
+
 }
+
+
+/* =========================
+   GALLERY
+========================= */
 
 .gallery {
+
   display: flex;
+
   overflow-x: auto;
+
   gap: 15px;
+
   padding-bottom: 10px;
+
 }
+
 
 .gallery img {
-  flex: 0 0 85%;
-  width: 85%;
-  height: 500px;
+
+  flex: 0 0 90%;
+
+  width: 90%;
+
+  height: 650px;
+
   object-fit: cover;
+
   border-radius: 12px;
+
 }
+
+
+/* =========================
+   INFO
+========================= */
 
 .info {
+
   background: white;
+
   padding: 25px;
+
   border-radius: 15px;
+
   line-height: 1.8;
+
 }
+
+
+/* =========================
+   FORM
+========================= */
 
 form {
+
   background: white;
+
   padding: 25px;
+
   border-radius: 15px;
-  box-shadow: 0 3px 15px rgba(0,0,0,.08);
+
+  box-shadow:
+    0 3px 15px rgba(0,0,0,.08);
+
 }
 
+
 label {
+
   display: block;
+
   margin-top: 15px;
+
   margin-bottom: 6px;
+
   font-weight: bold;
+
 }
+
 
 input,
 select,
 textarea {
+
   width: 100%;
+
   padding: 13px;
+
   border: 1px solid #ccc;
+
   border-radius: 8px;
+
   font-size: 16px;
+
 }
+
 
 textarea {
+
   min-height: 100px;
+
   resize: vertical;
+
 }
+
 
 button {
+
   width: 100%;
+
   margin-top: 25px;
+
   padding: 15px;
+
   background: #111;
+
   color: white;
+
   border: none;
+
   border-radius: 8px;
+
   font-size: 17px;
+
   font-weight: bold;
+
   cursor: pointer;
+
 }
+
 
 button:disabled {
+
   opacity: .6;
+
 }
+
 
 .notice {
+
   margin-top: 15px;
+
   text-align: center;
+
   font-size: 14px;
+
   color: #666;
+
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
+
   background: #111;
+
   color: white;
+
   text-align: center;
+
   padding: 25px 15px;
+
   margin-top: 30px;
+
 }
+
+
+footer p {
+
+  margin: 6px 0;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
+
   header h1 {
+
     font-size: 26px;
+
   }
+
 
   .hero {
+
     height: 350px;
+
   }
+
 
   .hero-box h2 {
+
     font-size: 26px;
+
   }
 
-.gallery img {
-  height: 550px;
-}
+
+  .gallery img {
+
+    height: 550px;
+
   }
 
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
   <h1>Southern Coastal</h1>
-  <p>活海鲜加工 · Live Seafood Restaurant</p>
+
+  <p>
+    活海鲜加工 · Live Seafood Restaurant
+  </p>
+
 </header>
 
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
+
   <div class="hero-box">
-    <h2>Fresh Seafood, Coastal Taste</h2>
-    <p>新鲜活海鲜 · 简单预约 · 方便用餐</p>
+
+    <h2>
+      Fresh Seafood, Coastal Taste
+    </h2>
+
+    <p>
+      新鲜活海鲜 · 简单预约 · 方便用餐
+    </p>
+
   </div>
+
 </section>
 
-<div style="text-align:center; padding:25px 20px;">
-  <a href="#reservation"
-     style="
-       display:inline-block;
-       background:#111;
-       color:white;
-       padding:15px 35px;
-       border-radius:8px;
-       text-decoration:none;
-       font-size:18px;
-       font-weight:bold;
-     ">
+
+<!-- =========================
+     RESERVATION BUTTON
+========================= -->
+
+<div class="reserve-button">
+
+  <a href="#reservation">
+
     Make Reservation / 立即预约
+
   </a>
+
 </div>
 
 
+<!-- =========================
+     ABOUT
+========================= -->
+
 <section class="section">
 
-  <h2>About Us / 关于我们</h2>
+  <h2>
+    About Us / 关于我们
+  </h2>
+
+
   <div class="about">
-    <p>
-      Welcome to Southern Coastal.<br>
-      We specialise in fresh live seafood and seafood processing.
-    </p>
 
     <p>
-      欢迎来到 Southern Coastal。<br>
-      我们专注于新鲜活海鲜以及海鲜加工。
+
+      Welcome to Southern Coastal.<br>
+
+      We specialise in fresh live seafood
+      and seafood processing.
+
     </p>
+
+
+    <p>
+
+      欢迎来到 Southern Coastal。<br>
+
+      我们专注于新鲜活海鲜以及海鲜加工。
+
+    </p>
+
   </div>
 
 </section>
 
 
+<!-- =========================
+     GALLERY
+========================= -->
+
 <section class="section">
 
-  <h2>Our Restaurant / 餐厅环境</h2>
+  <h2>
+    Our Restaurant / 餐厅环境
+  </h2>
+
 
   <div class="gallery">
 
-    <img src="images/IMG_4936.jpeg" alt="Southern Coastal">
-
-    <img src="images/IMG_4937.jpeg" alt="Southern Coastal">
-
-    <img src="images/IMG_4938.jpeg" alt="Southern Coastal">
-
-    <img src="images/IMG_4935.jpeg" alt="Southern Coastal">
-
-  </div>
-
-</section>
+    <img
+      src="images/IMG_4934.jpeg"
+      alt="Southern Coastal"
+    >
 
 
-<section class="section">
+    <img
+      src="images/IMG_4935.jpeg"
+      alt="Southern Coastal"
+    >
 
-  <h2>Information / 餐厅资料</h2>
 
-  <div class="info">
+    <img
+      src="images/IMG_4936.jpeg"
+      alt="Southern Coastal"
+    >
 
-    <p>
-      📍 <strong>Address / 地址</strong><br>
-      30, Jalan Mutiara Emas 5/22,<br>
-      Taman Mount Austin,<br>
-      81100 Johor Bahru,<br>
-      Johor Darul Ta'zim
-    </p>
 
-    <p>
-      📞 <strong>Phone / 电话</strong><br>
-      011-36043226
-    </p>
+    <img
+      src="images/IMG_4937.jpeg"
+      alt="Southern Coastal"
+    >
 
-    <p>
-      🕐 <strong>Opening / 营业时间</strong><br>
-      Monday – Sunday<br>
-      Tuesday Closed / 星期二休息
-    </p>
+
+    <img
+      src="images/IMG_4938.jpeg"
+      alt="Southern Coastal"
+    >
 
   </div>
 
 </section>
 
 
-<section class="section" id="reservation">
+<!-- =========================
+     RESERVATION
+========================= -->
 
-  <h2>Reservation / 在线预约</h2>
+<section
+  class="section"
+  id="reservation"
+>
+
+  <h2>
+    Reservation / 在线预约
+  </h2>
+
 
   <form id="reservationForm">
+
 
     <label>
       Name / 姓名
     </label>
+
 
     <input
       type="text"
@@ -299,6 +585,7 @@ footer {
       Phone / 电话
     </label>
 
+
     <input
       type="tel"
       id="phone"
@@ -311,6 +598,7 @@ footer {
       Date / 日期
     </label>
 
+
     <input
       type="date"
       id="date"
@@ -322,31 +610,110 @@ footer {
       Time / 时间
     </label>
 
-    <select id="time" required>
+
+    <select
+      id="time"
+      required
+    >
 
       <option value="">
         Select Time / 选择时间
       </option>
 
-      <option value="13:00">1:00 PM</option>
-      <option value="13:30">1:30 PM</option>
-      <option value="14:00">2:00 PM</option>
-      <option value="14:30">2:30 PM</option>
-      <option value="15:00">3:00 PM</option>
-      <option value="15:30">3:30 PM</option>
-      <option value="16:00">4:00 PM</option>
-      <option value="16:30">4:30 PM</option>
-      <option value="17:00">5:00 PM</option>
-      <option value="17:30">5:30 PM</option>
-      <option value="18:00">6:00 PM</option>
-      <option value="18:30">6:30 PM</option>
-      <option value="19:00">7:00 PM</option>
-      <option value="19:30">7:30 PM</option>
-      <option value="20:00">8:00 PM</option>
-      <option value="20:30">8:30 PM</option>
-      <option value="21:00">9:00 PM</option>
-      <option value="21:30">9:30 PM</option>
-      <option value="22:00">10:00 PM</option>
+
+      <option value="13:00">
+        1:00 PM
+      </option>
+
+
+      <option value="13:30">
+        1:30 PM
+      </option>
+
+
+      <option value="14:00">
+        2:00 PM
+      </option>
+
+
+      <option value="14:30">
+        2:30 PM
+      </option>
+
+
+      <option value="15:00">
+        3:00 PM
+      </option>
+
+
+      <option value="15:30">
+        3:30 PM
+      </option>
+
+
+      <option value="16:00">
+        4:00 PM
+      </option>
+
+
+      <option value="16:30">
+        4:30 PM
+      </option>
+
+
+      <option value="17:00">
+        5:00 PM
+      </option>
+
+
+      <option value="17:30">
+        5:30 PM
+      </option>
+
+
+      <option value="18:00">
+        6:00 PM
+      </option>
+
+
+      <option value="18:30">
+        6:30 PM
+      </option>
+
+
+      <option value="19:00">
+        7:00 PM
+      </option>
+
+
+      <option value="19:30">
+        7:30 PM
+      </option>
+
+
+      <option value="20:00">
+        8:00 PM
+      </option>
+
+
+      <option value="20:30">
+        8:30 PM
+      </option>
+
+
+      <option value="21:00">
+        9:00 PM
+      </option>
+
+
+      <option value="21:30">
+        9:30 PM
+      </option>
+
+
+      <option value="22:00">
+        10:00 PM
+      </option>
 
     </select>
 
@@ -355,19 +722,123 @@ footer {
       Guests / 人数
     </label>
 
-    <input
-      type="number"
+
+    <select
       id="guests"
-      min="1"
-      max="50"
       required
-      placeholder="Number of guests / 用餐人数"
     >
+
+      <option value="">
+        Select Guests / 选择人数
+      </option>
+
+
+      <option value="1">
+        1 Person / 1位
+      </option>
+
+
+      <option value="2">
+        2 People / 2位
+      </option>
+
+
+      <option value="3">
+        3 People / 3位
+      </option>
+
+
+      <option value="4">
+        4 People / 4位
+      </option>
+
+
+      <option value="5">
+        5 People / 5位
+      </option>
+
+
+      <option value="6">
+        6 People / 6位
+      </option>
+
+
+      <option value="7">
+        7 People / 7位
+      </option>
+
+
+      <option value="8">
+        8 People / 8位
+      </option>
+
+
+      <option value="9">
+        9 People / 9位
+      </option>
+
+
+      <option value="10">
+        10 People / 10位
+      </option>
+
+
+      <option value="11">
+        11 People / 11位
+      </option>
+
+
+      <option value="12">
+        12 People / 12位
+      </option>
+
+
+      <option value="13">
+        13 People / 13位
+      </option>
+
+
+      <option value="14">
+        14 People / 14位
+      </option>
+
+
+      <option value="15">
+        15 People / 15位
+      </option>
+
+
+      <option value="16">
+        16 People / 16位
+      </option>
+
+
+      <option value="17">
+        17 People / 17位
+      </option>
+
+
+      <option value="18">
+        18 People / 18位
+      </option>
+
+
+      <option value="19">
+        19 People / 19位
+      </option>
+
+
+      <option value="20">
+        20 People / 20位
+      </option>
+
+    </select>
 
 
     <label>
       Remarks / 备注
     </label>
+
 
     <textarea
       id="remarks"
@@ -379,140 +850,293 @@ footer {
       type="submit"
       id="submitButton"
     >
+
       Confirm Reservation / 确认预约
+
     </button>
 
+
     <div class="notice">
-      After submitting, WhatsApp will open automatically.
+
+      After submitting,
+      WhatsApp will open automatically.
+
       <br>
+
       提交后会自动打开 WhatsApp。
+
     </div>
+
 
   </form>
 
 </section>
 
 
+<!-- =========================
+     RESTAURANT INFORMATION
+========================= -->
+
+<section class="section">
+
+  <h2>
+    Information / 餐厅资料
+  </h2>
+
+
+  <div class="info">
+
+
+    <p>
+
+      📍 <strong>
+        Address / 地址
+      </strong>
+
+      <br>
+
+      30, Jalan Mutiara Emas 5/22,
+
+      <br>
+
+      Taman Mount Austin,
+
+      <br>
+
+      81100 Johor Bahru,
+
+      <br>
+
+      Johor Darul Ta'zim
+
+    </p>
+
+
+    <p>
+
+      📞 <strong>
+        Phone / 电话
+      </strong>
+
+      <br>
+
+      011-36043226
+
+    </p>
+
+
+    <p>
+
+      🕐 <strong>
+        Opening / 营业时间
+      </strong>
+
+      <br>
+
+      Monday – Sunday
+
+      <br>
+
+      Tuesday Closed /
+      星期二休息
+
+    </p>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-  <p>Southern Coastal</p>
+  <p>
+    Southern Coastal
+  </p>
 
-  <p>Live Seafood · 活海鲜加工</p>
+  <p>
+    Live Seafood · 活海鲜加工
+  </p>
 
-  <p>011-36043226</p>
+  <p>
+    011-36043226
+  </p>
 
 </footer>
 
 
 <script>
 
+
+/* =========================
+   GOOGLE SHEET
+========================= */
+
 const googleSheetURL =
+
 "https://script.google.com/macros/s/AKfycbxeN-GmdWUCk2GNy2hw7KIxj6QBZRe0qVWUN_LNP1RWBmREb42u0NpgDz31JZB7Wn4Z2Q/exec";
 
 
+/* =========================
+   RESERVATION FORM
+========================= */
+
 document
-.getElementById("reservationForm")
-.addEventListener("submit", function(event) {
 
-  event.preventDefault();
+  .getElementById("reservationForm")
 
-
-  const button =
-    document.getElementById("submitButton");
-
-  button.disabled = true;
-
-  button.innerText =
-    "Processing... / 处理中...";
+  .addEventListener(
+    "submit",
+    function(event) {
 
 
-  const name =
-    document.getElementById("name").value.trim();
-
-  const phone =
-    document.getElementById("phone").value.trim();
-
-  const date =
-    document.getElementById("date").value;
-
-  const time =
-    document.getElementById("time").value;
-
-  const guests =
-    document.getElementById("guests").value;
-
-  const remarks =
-    document.getElementById("remarks").value.trim();
+      event.preventDefault();
 
 
-  /*
-   * Generate reservation number
-   * on the customer side.
-   */
+      const button =
 
-  const randomNumber =
-    Math.random()
-      .toString(36)
-      .substring(2, 8)
-      .toUpperCase();
-
-  const reservationNo =
-    "SC-" + randomNumber;
+        document
+          .getElementById("submitButton");
 
 
-  const data = {
-
-    date: date,
-
-    time: time,
-
-    name: name,
-
-    phone: phone,
-
-    guests: guests,
-
-    remarks: remarks,
-
-    reservationNo: reservationNo
-
-  };
+      button.disabled = true;
 
 
-  /*
-   * Send reservation to Google Apps Script.
-   *
-   * text/plain avoids browser CORS preflight.
-   */
+      button.innerText =
 
-  fetch(googleSheetURL, {
-
-    method: "POST",
-
-    mode: "no-cors",
-
-    headers: {
-
-      "Content-Type":
-        "text/plain;charset=utf-8"
-
-    },
-
-    body: JSON.stringify(data)
-
-  })
-  .catch(function(error) {
-
-    console.log(error);
-
-  });
+        "Processing... / 处理中...";
 
 
-  /*
-   * WhatsApp message
-   */
+      const name =
 
-  const whatsappMessage =
+        document
+          .getElementById("name")
+          .value
+          .trim();
+
+
+      const phone =
+
+        document
+          .getElementById("phone")
+          .value
+          .trim();
+
+
+      const date =
+
+        document
+          .getElementById("date")
+          .value;
+
+
+      const time =
+
+        document
+          .getElementById("time")
+          .value;
+
+
+      const guests =
+
+        document
+          .getElementById("guests")
+          .value;
+
+
+      const remarks =
+
+        document
+          .getElementById("remarks")
+          .value
+          .trim();
+
+
+      /* =========================
+         RESERVATION NUMBER
+      ========================= */
+
+      const randomNumber =
+
+        Math.random()
+
+          .toString(36)
+
+          .substring(2, 8)
+
+          .toUpperCase();
+
+
+      const reservationNo =
+
+        "SC-" + randomNumber;
+
+
+      /* =========================
+         DATA
+      ========================= */
+
+      const data = {
+
+        date: date,
+
+        time: time,
+
+        name: name,
+
+        phone: phone,
+
+        guests: guests,
+
+        remarks: remarks,
+
+        reservationNo: reservationNo
+
+      };
+
+
+      /* =========================
+         SEND TO GOOGLE SHEET
+      ========================= */
+
+      fetch(
+        googleSheetURL,
+        {
+
+          method: "POST",
+
+          mode: "no-cors",
+
+          headers: {
+
+            "Content-Type":
+              "text/plain;charset=utf-8"
+
+          },
+
+          body:
+            JSON.stringify(data)
+
+        }
+
+      )
+      .catch(function(error) {
+
+        console.log(error);
+
+      });
+
+
+      /* =========================
+         WHATSAPP
+      ========================= */
+
+      const whatsappMessage =
+
 
 `Hello Southern Coastal,
 
@@ -530,57 +1154,81 @@ Reservation No. / 预约号码: ${reservationNo}
 Please confirm my reservation. Thank you!`;
 
 
-  const whatsappURL =
+      const whatsappURL =
 
-    "https://wa.me/601136043226?text=" +
+        "https://wa.me/601136043226?text=" +
 
-    encodeURIComponent(whatsappMessage);
-
-
-  /*
-   * Give Google a moment to receive
-   * the reservation before opening WhatsApp.
-   */
-
-  setTimeout(function() {
-
-    window.location.href =
-      whatsappURL;
-
-  }, 800);
-
-});
+        encodeURIComponent(
+          whatsappMessage
+        );
 
 
-/*
- * Prevent customers from selecting
- * Tuesday.
- */
+      /* =========================
+         OPEN WHATSAPP
+      ========================= */
+
+      setTimeout(
+        function() {
+
+          window.location.href =
+            whatsappURL;
+
+        },
+        800
+      );
+
+
+    }
+  );
+
+
+/* =========================
+   TUESDAY CLOSED
+========================= */
 
 document
-.getElementById("date")
-.addEventListener("change", function() {
 
-  const selectedDate =
-    new Date(this.value + "T00:00:00");
+  .getElementById("date")
 
-  const day =
-    selectedDate.getDay();
+  .addEventListener(
+    "change",
+    function() {
 
-  if (day === 2) {
 
-    alert(
-      "Tuesday is closed. / 星期二休息，请选择其他日期。"
-    );
+      const selectedDate =
 
-    this.value = "";
+        new Date(
+          this.value +
+          "T00:00:00"
+        );
 
-  }
 
-});
+      const day =
+        selectedDate.getDay();
+
+
+      if (day === 2) {
+
+
+        alert(
+
+          "Tuesday is closed. / 星期二休息，请选择其他日期。"
+
+        );
+
+
+        this.value = "";
+
+
+      }
+
+    }
+  );
 
 
 </script>
 
+
 </body>
+
 </html>
